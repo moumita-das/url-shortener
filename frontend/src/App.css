@@ -1,0 +1,175 @@
+.navbar {
+  .nav-link {
+    color: #ddd;
+  }
+}
+
+.btn-group-vertical {
+  width: 100%;
+  height: var(--rig-height, 15em);
+  gap: 1em;
+  align-items: center;
+  position: relative;
+  margin-left: 1em;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 10%;
+    bottom: 0;
+    left: 50%;
+    WIDTH: 10px;
+    background: #111;
+    translate: -50% 0;
+    border-radius: 2px;
+    z-index: 0;
+  }
+
+  .action-btn {
+    height: 3em;
+    width: fit-content;
+    border-radius: 0;
+    flex: 0;
+    position: relative;
+    z-index: 1;
+    background-color: #111;
+    color: #ddd;
+    border: 0;
+    white-space: nowrap;
+    padding-inline: 1em;
+    /* breathing room so text isn't clipped */
+    clip-path: polygon(0 0, 100% 0, 97% 14%, 100% 31%, 96% 49%, 99% 67%, 97% 85%, 100% 100%, 0 100%, 3% 84%, 0 66%, 4% 48%, 1% 30%, 3% 15%);
+
+    &:nth-child(2) {
+      clip-path: polygon(0 0, 100% 0, 99% 18%, 96% 36%, 100% 55%, 97% 73%, 99% 100%, 0 100%, 2% 80%, 5% 60%, 1% 42%, 4% 22%);
+    }
+
+    &:nth-child(3) {
+      clip-path: polygon(0 0, 100% 0, 99% 18%, 96% 36%, 100% 55%, 97% 73%, 99% 100%, 0 100%, 2% 80%, 5% 60%, 1% 42%);
+    }
+
+    &.active {
+      padding-inline: 2.6em;
+    }
+  }
+}
+
+.see-saw {
+  position: relative;
+  height: var(--rig-height, 15em);
+  --tilt: 0deg;
+  margin: auto;
+
+  .beam {
+    position: absolute;
+    inset-inline: 0;
+    top: 55%;
+    translate: 0 -50%;
+    rotate: var(--tilt);
+    transform-origin: 50% 50%;
+    transition: rotate 600ms cubic-bezier(.34, 1.56, .64, 1);
+
+    .rod {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      position: relative;
+      padding-bottom: 6px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset-inline: 0;
+        bottom: 0;
+        height: 10px;
+        border-radius: 2px;
+        background: rgb(36, 30, 30);
+      }
+
+      .url-input {
+        flex: 0 0 auto;
+        width: 18em;
+        height: 3em;
+        border-radius: 0;
+        border-bottom: 2px solid transparent;
+        margin: 0 2em;
+        border: 0;
+        background: transparent;
+        box-shadow: none;
+        text-align: center;
+        rotate: calc(-1 *var(--tilt));
+        transition: rotate 600ms cubic-bezier(.34, 1.56, .64, 1);
+
+        &:focus-visible {
+          outline: none;
+          border-bottom-color: rgb(36, 30, 30);
+        }
+      }
+    }
+  }
+
+  .fulcrum {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    translate: -50% 0;
+    width: 3em;
+    bottom: 0;
+    background: rgb(36, 30, 30);
+    border-top-right-radius: 0.6em;
+    clip-path: shape(from 45% 0, curve to 55% 0 with 50% -6%, line to 100% 100%, line to 0 100%, close);
+  }
+}
+
+.ground {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    bottom: -4px;
+    height: 1em;
+    background: #111;
+    clip-path: polygon(0 62%,
+        5% 53%,
+        11% 66%,
+        17% 56%,
+        24% 69%,
+        31% 55%,
+        38% 65%,
+        45% 51%,
+        52% 63%,
+        59% 54%,
+        66% 67%,
+        73% 56%,
+        80% 68%,
+        87% 53%,
+        94% 64%,
+        100% 58%,
+        100% 78%,
+        94% 84%,
+        87% 73%,
+        80% 88%,
+        73% 76%,
+        66% 87%,
+        59% 74%,
+        52% 83%,
+        45% 71%,
+        38% 85%,
+        31% 75%,
+        24% 89%,
+        17% 76%,
+        11% 86%,
+        5% 73%,
+        0 82%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .beam,
+  .url-input {
+    transition-duration: 1ms;
+  }
+}

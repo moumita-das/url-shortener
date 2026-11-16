@@ -1,0 +1,83 @@
+# ─────────────────────────────────────────────
+# Secrets  —  never commit these
+# ─────────────────────────────────────────────
+# No leading slash, so this matches backend/.env, frontend/.env and any
+# other .env at any depth.
+.env
+.env.*
+*.local
+!.env.example
+
+# ─────────────────────────────────────────────
+# Python / backend
+# ─────────────────────────────────────────────
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+sdist/
+wheels/
+*.egg-info/
+*.egg
+.installed.cfg
+
+# Test / type-check caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+
+# ─────────────────────────────────────────────
+# Node / frontend
+# ─────────────────────────────────────────────
+node_modules/
+dist/
+dist-ssr/
+.vite/
+*.tsbuildinfo
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ─────────────────────────────────────────────
+# Editors / OS
+# ─────────────────────────────────────────────
+# launch.json is shared on purpose: it carries the debug config for the
+# backend server. Everything else under .vscode is personal.
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Claude Code local settings
+.claude/settings.local.json
+
+# Backup of the old frontend-only repo (see notes)
+.git.bak/
