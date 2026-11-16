@@ -1,9 +1,14 @@
+
+
 # URL Shortener
 
 A full-stack URL shortener: paste a long link, get a short one back; paste the
 short one, get the original. Built with **FastAPI + MongoDB** on the backend and
 **React + Vite** on the frontend, with optional custom aliases and per-user
 ownership of the links you create.
+
+<img width="1916" height="911" alt="image" src="https://github.com/user-attachments/assets/c6e212ed-7d8d-4e1f-8f23-05e7b91a5950" />
+
 
 ---
 
