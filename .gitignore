@@ -79,5 +79,5 @@ desktop.ini
 # Claude Code local settings
 .claude/settings.local.json
 
-# Backup of the old frontend-only repo (see notes)
+# Stray git directories from older, nested repos
 .git.bak/
