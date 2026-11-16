@@ -1,12 +1,9 @@
 # URL Shortener
 
-> ...because size matters.
-
 A full-stack URL shortener: paste a long link, get a short one back; paste the
 short one, get the original. Built with **FastAPI + MongoDB** on the backend and
-**React + Vite** on the frontend, with a seesaw as the UI metaphor — the two
-inputs sit on opposite ends of a tilting beam, and the beam leans toward
-whichever direction you're translating.
+**React + Vite** on the frontend, with optional custom aliases and per-user
+ownership of the links you create.
 
 ---
 
@@ -141,7 +138,7 @@ url-shortener/
         ├── api.js        # axios instance + interceptors
         ├── auth.jsx      # auth context
         ├── components/   # layout and navbar
-        └── pages/        # Home (the seesaw), Login
+        └── pages/        # Home, Login
 ```
 
 ---
